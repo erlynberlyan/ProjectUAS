@@ -1,0 +1,46 @@
+mport Link from "next/link";
+import { useRouter } from "next/router";
+
+export default function Home() {
+
+  const router = useRouter()
+  const navigatePage=() => router.push('/add-new')
+
+  return (
+    <div className="main__container">
+      <div className="invoice__header">
+        <div className="invoice__header-logo">
+          <h3>Invoices</h3>
+          <p>Terdapat 1 Invoice</p>
+        </div>
+        <button className="btn" onClick={navigatePage}>Add New</button>
+      </div>
+
+      <div className="invoice__container">
+        {/*====== invoice item====*/}
+        <Link href={'/invoices/id'} passRef>
+        <div className="invoice__item">
+          <div>
+            <h5 className="invoice__id">RT56342</h5>
+          </div>
+          <div>
+            <h6 className="invoice__client">FTEIC</h6>
+          </div>
+          <div>
+            <p className="invoice__created">1-07-2022</p>
+          </div>
+          <div>
+            <h3 className="invoice__total">Rp.150.000</h3>
+          </div>
+
+          <div>
+            <button className="pending__status">pending</button>
+          </div>
+        </div>
+        </Link>
+      </div>
+    </div>
+
+  );
+
+}
