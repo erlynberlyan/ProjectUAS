@@ -1,0 +1,111 @@
+import React, {useState, useRef} from "react";
+import { useRouter } from "next/router";
+
+const EditItem = () => {
+
+    const router = useRouter ();
+    const [items, setItems]= useState([])
+
+    // add product item
+    const addItem = ()=> {
+        setItems([...items,{name:'', quantity:0, price:0, total:0}]);
+        console.log(items);
+    };
+    // handler change
+    const handlerChange =(event, i) => {
+        const{name,value} =event.target
+    
+       
+    }
+    return <div className="main__container">
+        <div className="new__invoice-header">
+            <h3>Edit #RT56342 </h3>
+        </div>
+        {/*======= new invoice body===== */}
+        <div className="new__invoice-body">
+            {/*======bill from=====*/}
+        <div className="bill__from">
+            <p className="bill__title">Bill From</p>
+            <div className="form__group">
+                <p>Street Address</p>
+                <input type="text"/>
+            </div>
+            <div className="form__group inline__form-group">
+                <div>
+                    <p>City</p>
+                    <input type="text"/>
+                </div>
+                <div>
+                    <p>Fakultas</p>
+                    <input type="text"/>
+                </div>              
+                <div>
+                    <p>Departemen</p>
+                    <input type="text"/>
+                </div>
+            </div>
+        </div>
+        {/*======bill to=====*/}
+        <div className="bill__to">
+            <p className="bill_title">Bill from</p>
+            <div className="form__group">
+                <p>Client Name</p>
+                <input type="text"/>
+            </div>
+            <div className="form__group">
+                <p>Client Email</p>
+                <input type="email"/>
+                <div/>
+               <div className="form__group">
+                <p>Street Address</p>
+                <input type="email"/>
+                </div>
+            <div className="form__group inline__form-group">
+            <div>
+                    <p>City</p>
+                    <input type="text"/>
+                </div>
+                <div>
+                    <p>Fakultas</p>
+                    <input type="text"/>
+                </div>              
+                <div>
+                    <p>Departemen</p>
+                    <input type="text"/>
+                </div>
+            </div>
+            </div>
+            <div className="form__group inline__form-group">
+            <div className="inline__group">
+                <div>
+                    <p>Invoice Date</p>
+                    <input type="date"/>
+                    </div>
+                </div>
+                <div className="inline__group">
+                    <p>Payment Terms</p>
+                    <input type="text"/>
+                </div>              
+                 </div>
+                 <div className="form__group">
+                <p>Project Description</p>
+                <input type="email"/>
+                <div/>
+                </div>
+        </div>
+        {/*======invoice product items=====*/}
+       
+          <div className="new__invoice__btns" style={{justifyContent: 'end'}}>
+     
+            <div>
+            <button className="draft__btn" onClick={'/invoices/id'}>Cancel</button>
+            <button className="mark__as-btn">Save Changes</button>
+          </div>
+          </div>
+        </div>
+        </div>
+ 
+};
+
+export default EditItem
+
